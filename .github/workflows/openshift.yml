@@ -55,7 +55,12 @@ jobs:
         password: ${{ env.REGISTRY_PASSWORD }}
 
     # The path the image was pushed to is now stored in ${{ steps.push-to-registry.outputs.registry-path }}
-
+    - name: Install oc
+      uses: redhat-actions/oc-installer@v1
+      with:
+        oc_version: 'latest'
+  # Now, oc is available for the rest of these steps.
+  
     # https://github.com/redhat-actions/oc-login#readme
     - name: Log in to OpenShift 
       uses: redhat-actions/oc-login@v1
