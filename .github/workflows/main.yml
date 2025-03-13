@@ -40,7 +40,7 @@ jobs:
       with:
         path_context: '.'
         builder_image: 'registry.access.redhat.com/ubi7/python-38'
-        image: ${{ env.APP_NAME }}
+        image: nationalparks-py
         tags: ${{ env.IMAGE_TAGS }}
 
     # https://github.com/redhat-actions/push-to-registry#readme
